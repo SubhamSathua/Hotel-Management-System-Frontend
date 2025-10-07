@@ -1,59 +1,128 @@
-# HotelMSFE
+# Hotel Management System (Front-End)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+This is the **Angular front-end** application for a Hotel Management System. It provides a user-friendly interface for managing hotel operations such as room bookings, customer management, staff management, and reporting.
 
-## Development server
 
-To start a local development server, run:
+
+## Table of Contents
+
+* [Features](#features)
+* [Demo](#demo)
+* [Technologies Used](#technologies-used)
+* [Project Structure](#project-structure)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Future Enhancements](#future-enhancements)
+<!-- * [Contributing](#contributing) -->
+* [License](#license)
+
+
+
+## Features
+
+* User authentication and authorization (Admin, Staff, Guest)
+* Room management (Add, Update, Delete, View)
+* Booking management (Check-in, Check-out, Reservation)
+* Customer management (Add, Update, Delete, View)
+* Staff management (Add, Update, Delete, View)
+* Billing and invoice generation
+* Dashboard with charts and statistics
+* Responsive design for mobile and desktop
+
+
+
+## Demo
+
+*(N/A)*
+
+
+
+## Technologies Used
+
+* **Framework:** Angular 17+
+* **Language:** TypeScript, HTML, CSS
+* **UI Library:** Angular Material
+* **Routing:** Angular Router
+* **HTTP Client:** Angular HttpClient for API integration
+* **Forms:** Reactive Forms and Template-Driven Forms
+
+
+
+## Project Structure
+
+```
+hotel-management-frontend/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/      # Reusable components (header, footer, sidebar)
+│   │   ├── pages/           # Feature pages (dashboard, rooms, bookings)
+│   │   ├── services/        # Angular services for API calls
+│   │   ├── models/          # TypeScript models/interfaces
+│   │   ├── guards/          # Route guards
+│   │   ├── app-routing.module.ts
+│   │   └── app.module.ts
+│   └── assets/              # Images, styles, icons
+├── angular.json
+├── package.json
+└── README.md
+```
+
+
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/SubhamSathua/Hotel-Management-System-Frontend.git
+cd hotel-management-frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser at `http://localhost:4200/`
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
 
-```bash
-ng generate component component-name
-```
+## Usage
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+* Navigate through the dashboard to manage rooms, bookings, staff, and customers.
+* Use the booking module to create, update, and delete reservations.
+* Admin users can manage staff and view analytics.
 
-```bash
-ng generate --help
-```
 
-## Building
 
-To build the project run:
+## Future Enhancements
 
-```bash
-ng build
-```
+* Integration with back-end APIs for real-time data
+* Payment gateway integration
+* Advanced analytics and reporting
+* Multi-language support
+* Push notifications for booking reminders
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+<!-- ## Contributing
 
-```bash
-ng test
-```
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add new feature"`
+4. Push to the branch: `git push origin feature/your-feature`
+5. Create a pull request -->
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
 
-```bash
-ng e2e
-```
+## License
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
