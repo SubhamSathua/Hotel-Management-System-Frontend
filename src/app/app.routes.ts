@@ -5,6 +5,7 @@ import { BookRoom } from './book-room/book-room';
 import { About } from './about/about';
 import { NgModule } from '@angular/core';
 import { Register } from './register/register';
+import { ErrorPage } from './error/error';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -13,7 +14,7 @@ export const routes: Routes = [
   { path: 'about', component: About },
   { path: 'login', component: Login },
   { path: 'register', component: Register },
-  { path: '**', component: Error }
+  { path: '**', component: ErrorPage }
 ];
 
 @NgModule({
