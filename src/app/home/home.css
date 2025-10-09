@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  margin-top: 80px; /* space for fixed navbar */
+  /* margin-top: 80px;  */
   height: 100vh;
   display: flex;
   align-items: center;

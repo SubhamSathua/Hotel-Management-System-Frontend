@@ -6,8 +6,10 @@
         Streamline your hotel operations with our clean, intuitive management system designed for efficiency
       </p>
       <div class="cta-buttons">
-        <button class="btn btn-primary" (click)="onRegister()">Get Started</button>
-        <button class="btn btn-secondary" (click)="onLogin()">Sign In</button>
+
+      <a routerLink="/register" routerLinkActive="active" class="btn btn-primary">Get Started</a>
+      <a routerLink="/login" routerLinkActive="active" class="btn btn-secondary">Sign In</a>
+
       </div>
     </div>
   </div>
@@ -52,12 +54,11 @@
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="cta-section">
+<!-- <section class="cta-section">
   <h2>Ready to get started?</h2>
   <p>Join hundreds of hotels already using HotelHub</p>
   <div class="cta-buttons">
     <button class="btn btn-primary" (click)="onRegister()">Register Now</button>
     <button class="btn btn-secondary" (click)="onLogin()">Login</button>
   </div>
-</section>
+</section> -->
