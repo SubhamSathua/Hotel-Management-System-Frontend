@@ -1,1 +1,143 @@
-<p>reception-dashboard works!</p>
+<p class="title">Reception Dashboard</p>
+<div class="dashboard">
+    <!-- Cards Section -->
+    <div class="cards-section">
+        <!-- Check-In Management Card -->
+        <div class="card">
+            <div class="card-icon">
+                <img src="icons/checkIn.svg" alt="">
+            </div>
+            <div class="card-title">Check-In Management</div>
+        </div>
+
+        <!-- Check-Out Management Card -->
+        <div class="card">
+            <div class="card-icon">
+                <img src="icons/checkOut.svg" alt="">
+
+            </div>
+            <div class="card-title">Check-Out Management</div>
+        </div>
+
+        <!-- Check Room Availability Card -->
+        <div class="card">
+            <div class="card-icon">
+                <img src="icons/booked.svg" alt="">
+
+            </div>
+            <div class="card-title">Check Room Availability & Allocation</div>
+        </div>
+
+        <!-- Manual Booking Card -->
+        <div class="card">
+            <div class="card-icon">
+                <img src="icons/book.svg" alt="">
+            </div>
+            <div class="card-title">Manual Booking (Walk-in Reservation)</div>
+        </div>
+
+        <!-- Booked Rooms & Invoice Card -->
+        <div class="card">
+            <div class="card-icon">
+                <img src="icons/invoice.svg" alt="">
+            </div>
+            <div class="card-title">Booked Rooms & Invoice Management</div>
+        </div>
+
+        <!-- Guest Services Card -->
+        <div class="card">
+            <div class="card-icon">
+                <img src="icons/guestServices.svg" alt="">
+
+            </div>
+            <div class="card-title">Guest Services</div>
+        </div>
+    </div>
+
+    <!-- Status Section -->
+    <div class="status-section">
+        <!-- Date Time Card -->
+        <div class="datetime-card">
+            <div class="datetime-content">
+                <div class="date-text">18 Oct 2025</div>
+                <div class="time-text">4:30 PM</div>
+            </div>
+        </div>
+
+        <!-- Upcoming Bookings -->
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-title">Upcoming Bookings</div>
+                <button class="refresh-btn" onclick="location.reload()">
+                    <img src="icons/reload.svg" alt="">
+                </button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Guest Name</th>
+                            <th>Room No.</th>
+                            <th>Room Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John Smith</td>
+                            <td>101</td>
+                            <td>14:00</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Doe</td>
+                            <td>205</td>
+                            <td>14:30</td>
+                        </tr>
+                        <tr>
+                            <td>Jane Doe</td>
+                            <td>205</td>
+                            <td>15:30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Late Checkout Alerts -->
+        <div class="status-card">
+            <div class="status-header">
+                <div class="status-title">Late Checkout Alerts</div>
+                <button class="refresh-btn" onclick="location.reload()">
+                    <img src="icons/reload.svg" alt="">
+                </button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Guest Name</th>
+                            <th>Room No.</th>
+                            <th>Scheduled Checkout</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mike Johnson</td>
+                            <td>310</td>
+                            <td><span class="late-badge">11:00 (Late)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Lee</td>
+                            <td>310</td>
+                            <td><span class="late-badge">11:00 (Late)</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sarah Lee</td>
+                            <td>402</td>
+                            <td><span class="late-badge">11:00 (Late)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
