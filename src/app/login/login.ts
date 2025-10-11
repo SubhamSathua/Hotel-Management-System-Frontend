@@ -15,17 +15,10 @@ import { CustomerDashboard } from '../customer-dashboard/customer-dashboard';
   styleUrls: ['./login.css']
 })
 export class Login {
-    title = 'Hotel Login';
-  currentView = 'login'; // default view
-
-
-  loginInput = {
-    email: '',
-    password: ''
-  };
-
+   loginInput = { email: '', password: '' };
   loginMsg = '';
-   constructor(private http: HttpClient, private router: Router) {}
+
+  constructor(private http: HttpClient, private router: Router) {}
 
   login() {
     this.http.post('http://localhost:8080/api/login', this.loginInput).subscribe({
