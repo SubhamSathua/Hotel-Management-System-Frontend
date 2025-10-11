@@ -11,39 +11,44 @@ import { provideHttpClient } from '@angular/common/http';
   styleUrls: ['./login.css']
 })
 export class Login {
-  // login() {
-  //   throw new Error('Method not implemented.');
-  // }
-  // password: any;
-  // username: any;
+   loginInput = { email: '', password: '' };
+  loginMsg = '';
 
-  username: string = '';
-  password: string = '';
-
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   login() {
-    const loginData = { username: this.username, password: this.password };
+    this.http.post('http://localhost:8080/api/login', this.loginInput).subscribe({
+      next: (res) => {
+        const result = res as any;
 
-    this.http.post('http://localhost:8080/api/login', loginData)
-      .subscribe(
-        (response: any) => {
-          console.log('Login response:', response);
-          if (response.role) {
-            if (response.role === 'ADMIN') {
-              this.router.navigate(['/admin-dashboard']);
-            } else if (response.role === 'USER') {
-              this.router.navigate(['/user-dashboard']);
-            }
-          } else {
-            alert('Invalid credentials');
+        if (result.status === 'success') {
+          // Navigate to respective dashboard based on role
+          switch(result.role) {
+            case 'ADMIN':
+              this.router.navigate(['/adminDashboard']);
+              break;
+            case 'MANAGER':
+              this.router.navigate(['/manager-dashboard']);
+              break;
+            case 'RECEPTION':
+              this.router.navigate(['/receptionDashboard']);
+              break;
+            case 'CUSTOMER':
+              this.router.navigate(['/customerDashboard']);
+              break;
+            default:
+              this.loginMsg = 'Unknown role';
           }
-        },
-        (error) => {
-          console.error('Login error:', error);
-          alert('Server error or wrong credentials');
+        } else {
+          // Backend returned login failure
+          this.loginMsg = result.message;
         }
-      );
+      },
+      error: (err) => {
+        // Network/server error
+        this.loginMsg = 'Server error';
+      }
+    });
   }
 
 }
