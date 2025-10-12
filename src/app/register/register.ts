@@ -1,12 +1,40 @@
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  imports: [RouterLink],
+  standalone: true, // important for standalone components
+  imports: [RouterLink, FormsModule, HttpClientModule], // add HttpClientModule here
   templateUrl: './register.html',
-  styleUrl: './register.css'
+  styleUrls: ['./register.css'] // note: it's styleUrls, not styleUrl
 })
 export class Register {
+  registerInput = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''
+  };
+  registerMsg = '';
 
+  constructor(private http: HttpClient, private router: Router) {}
+
+  register() {
+    this.http.post('http://localhost:8080/api/register', this.registerInput).subscribe({
+      next: (res) => {
+        const result = res as any;
+        if (result.status === 'success') {
+          this.registerMsg = 'Registration successful!';
+          this.router.navigate(['/login']);
+        } else {
+          this.registerMsg = result.message;
+        }
+      },
+      error: (err) => {
+        this.registerMsg = 'Server error';
+      }
+    });
+  }
 }

@@ -25,7 +25,11 @@ nav {
   font-weight: 600;
   color: #1a1a1a;
   letter-spacing: -0.5px;
+  /* border: 1px solid red; */
+  padding: none;
+  height: 40px;
 }
+
 
 .nav-links {
   display: flex;

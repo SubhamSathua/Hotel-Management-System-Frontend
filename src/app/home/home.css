@@ -17,8 +17,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/assets/hotelBgImg.jpg') center/cover no-repeat; /* your image path */
-  filter: brightness(0.7); /* dim image slightly */
+  background: url('/assets/hotelBgImg.jpg') center/cover no-repeat;
+  /* your image path */
+  /* filter: brightness(0.7); */
+  filter: brightness(50%);
+  /* dim image slightly */
   z-index: -2;
 }
 
@@ -54,6 +57,8 @@
   margin-bottom: 3rem;
   color: #f0f0f0;
   line-height: 1.6;
+  text-shadow: 10px 0 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .cta-buttons {
