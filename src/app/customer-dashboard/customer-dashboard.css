@@ -1,0 +1,163 @@
+.dashboard {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 32px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+/* Navigation Tabs */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b7280;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.nav button.active {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.1);
+}
+
+/* Tab Content */
+.tab-content {
+  background-color: #f9fafb;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Forms */
+.booking-form,
+.profile-form {
+  display: grid;
+  gap: 16px;
+  max-width: 480px;
+  margin-top: 16px;
+}
+
+label {
+  font-weight: 500;
+  color: #374151;
+}
+
+input,
+select {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+/* Submit Button */
+button[type="submit"] {
+  padding: 12px;
+  background-color: #6366f1;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #4f46e5;
+}
+
+/* Booked Room Cards */
+.room-card {
+  background-color: #f3f4f6;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.room-card h3 {
+  font-size: 1.2rem;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.room-card p {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* Rating Stars */
+.stars {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.stars span {
+  font-size: 24px;
+  cursor: pointer;
+  color: #d1d5db;
+  transition: color 0.2s ease;
+}
+
+.stars span.active {
+  color: #fbbf24;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .dashboard {
+    padding: 20px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .booking-form,
+  .profile-form {
+    width: 100%;
+  }
+}

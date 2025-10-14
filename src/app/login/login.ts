@@ -26,7 +26,6 @@ export class Login {
         const result = res as any;
 
         if (result.status === 'success') {
-          // Navigate to respective dashboard based on role
           switch(result.role) {
             case 'ADMIN':
               this.router.navigate(['/adminDashboard']);
@@ -44,12 +43,10 @@ export class Login {
               this.loginMsg = 'Unknown role';
           }
         } else {
-          // Backend returned login failure
           this.loginMsg = result.message;
         }
       },
       error: (err) => {
-        // Network/server error
         this.loginMsg = 'Server error';
       }
     });

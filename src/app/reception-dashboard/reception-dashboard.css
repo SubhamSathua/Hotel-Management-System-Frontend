@@ -18,7 +18,6 @@
 }
  .dashboard {
      max-width: 1400px;
-     /* margin: 0 auto; */
      display: grid;
      margin: 10px;
      grid-template-columns: 2fr 1fr;
@@ -79,7 +78,6 @@
      letter-spacing: -0.01em;
  }
 
- /* Card Colors */
  .card:nth-child(1) {
      background: #187473;
  }

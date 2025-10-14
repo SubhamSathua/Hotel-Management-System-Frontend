@@ -5,10 +5,10 @@ import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-register',
-  standalone: true, // important for standalone components
-  imports: [RouterLink, FormsModule, HttpClientModule], // add HttpClientModule here
+  standalone: true, 
+  imports: [RouterLink, FormsModule, HttpClientModule], 
   templateUrl: './register.html',
-  styleUrls: ['./register.css'] // note: it's styleUrls, not styleUrl
+  styleUrls: ['./register.css'] 
 })
 export class Register {
   registerInput = {

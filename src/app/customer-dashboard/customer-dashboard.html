@@ -1,1 +1,65 @@
-<p>customer-dashboard works!</p>
+<div class="dashboard">
+    <header class="header">
+        <h1>Customer Dashboard</h1>
+        <nav class="nav">
+            <button [class.active]="activeTab === 'book'" (click)="setTab('book')">Book a Room</button>
+            <button [class.active]="activeTab === 'view'" (click)="setTab('view')">View Booked Rooms</button>
+            <button [class.active]="activeTab === 'profile'" (click)="setTab('profile')">Profile & Rating</button>
+        </nav>
+    </header>
+
+
+    <section class="tab-content">
+        <!-- Book a Room Tab -->
+        <div *ngIf="activeTab === 'book'" class="tab-pane">
+            <h2>Book a Room</h2>
+            <form class="booking-form" (ngSubmit)="bookRoom()">
+                <label>Check-in Date</label>
+                <input type="date" [(ngModel)]="booking.checkin" name="checkin" required />
+
+
+                <label>Check-out Date</label>
+                <input type="date" [(ngModel)]="booking.checkout" name="checkout" required />
+
+
+                <label>Room Type</label>
+                <select [(ngModel)]="booking.roomType" name="roomType">
+                    <option value="standard">Standard</option>
+                    <option value="deluxe">Deluxe</option>
+                    <option value="suite">Suite</option>
+                </select>
+
+
+                <label>Guests</label>
+                <input type="number" [(ngModel)]="booking.guests" name="guests" min="1" max="10" />
+
+
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+
+
+        <!-- View Booked Rooms Tab -->
+        <div *ngIf="activeTab === 'view'" class="tab-pane">
+            <h2>My Booked Rooms</h2>
+            <div *ngIf="bookedRooms.length; else noBookings">
+                <div *ngFor="let room of bookedRooms" class="room-card">
+                    <h3>{{ room.roomType | titlecase }} Room</h3>
+                    <p>Check-in: {{ room.checkin }}</p>
+                    <p>Check-out: {{ room.checkout }}</p>
+                    <p>Guests: {{ room.guests }}</p>
+                </div>
+            </div>
+            <ng-template #noBookings>
+                <p>No rooms booked yet.</p>
+            </ng-template>
+        </div>
+
+
+        <!-- Profile & Rating Tab -->
+        <div *ngIf="activeTab === 'profile'" class="tab-pane">
+            <h2>Profile & Rating</h2>
+            <form class="profile-form" (ngSubmit)="updateProfile()">
+                <label>Full Name</label>
+                <input type="text" [(ngModel)]="profile.name" name="name" />
+
