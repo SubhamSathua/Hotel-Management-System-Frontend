@@ -1,0 +1,11 @@
+
+    .container {
+      max-width: 1050px;
+      margin: 40px auto;
+      background: url('/assets/hotelBgImg.jpg') center/cover no-repeat; 
+      background-size: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      color: black;
+      position: relative;
+      }
