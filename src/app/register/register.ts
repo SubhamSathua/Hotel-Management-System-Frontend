@@ -22,6 +22,28 @@ export class Register {
   constructor(private http: HttpClient, private router: Router) {}
 
   register() {
+    // Simple patterns for validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
+
+    // Basic validation before sending to backend
+    if (!this.registerInput.firstName || !this.registerInput.lastName || 
+        !this.registerInput.email || !this.registerInput.password) {
+      this.registerMsg = 'All fields are required.';
+      return;
+    }
+
+    if (!emailPattern.test(this.registerInput.email)) {
+      this.registerMsg = 'Invalid email address.';
+      return;
+    }
+
+    if (!passwordPattern.test(this.registerInput.password)) {
+      this.registerMsg = 'Weak password. Must include at least 1 uppercase letter, 1 number, and be 6+ characters long.';
+      return;
+    }
+
+    // If validation passes, call API
     this.http.post('http://localhost:8080/api/register', this.registerInput).subscribe({
       next: (res) => {
         const result = res as any;
@@ -32,9 +54,10 @@ export class Register {
           this.registerMsg = result.message;
         }
       },
-      error: (err) => {
+      error: () => {
         this.registerMsg = 'Server error';
       }
     });
   }
 }
+

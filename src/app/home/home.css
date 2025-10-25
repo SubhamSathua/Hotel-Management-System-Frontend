@@ -18,6 +18,7 @@
   right: 0;
   bottom: 0;
   background: url('/assets/hotelBgImg.jpg') center/cover no-repeat;
+  /* background: url('/assets/hotels.jpg') center/cover no-repeat; */
   /* your image path */
   /* filter: brightness(0.7); */
   filter: brightness(50%);
@@ -32,7 +33,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40%;
+  height:40%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
   z-index: -1;
 }
